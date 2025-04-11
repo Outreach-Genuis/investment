@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutreachGenius - AI Voice Agents for Home Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: 100%;
+            width: 2px;
+            background: #e5e7eb;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .stats-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="OutreachGenius">
+                        <span class="ml-2 text-xl font-bold text-gray-900">OutreachGenius</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#solution" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Solution</a>
+                    <a href="#products" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Products</a>
+                    <a href="#traction" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Traction</a>
+                    <a href="#team" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Team</a>
+                    <a href="#investment" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Investment</a>
+                    <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Contact Us</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#solution" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50">Solution</a>
+                <a href="#products" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50">Products</a>
+                <a href="#traction" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50">Traction</a>
+                <a href="#team" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50">Team</a>
+                <a href="#investment" class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-indigo-600 hover:bg-gray-50">Investment</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-white bg-indigo-600 rounded-md mx-3">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">AI Voice Agents for Home Service Contractors</h1>
+                    <p class="text-xl mb-8 text-gray-200">Turning missed calls & cold leads into booked jobs - 24/7</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-md text-lg font-medium text-center">Get Started</a>
+                        <a href="tel:19064839857" class="bg-white hover:bg-gray-100 text-indigo-600 px-6 py-3 rounded-md text-lg font-medium text-center">
+                            <i class="fas fa-phone-alt mr-2"></i> (906) 483-9857
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block md:w-1/2 mt-10 md:mt-0">
+                    <div class="bg-white rounded-xl shadow-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="h-3 w-3 rounded-full bg-red-500 mr-2"></div>
+                            <div class="h-3 w-3 rounded-full bg-yellow-500 mr-2"></div>
+                            <div class="h-3 w-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <div class="text-sm font-medium text-gray-900">OutreachGenius AI</div>
+                                    <div class="mt-1 text-sm text-gray-600">Hi there! I'm your AI assistant from OutreachGenius. How can I help your home service business today?</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-indigo-50 rounded-lg p-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-600 flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <div class="text-sm font-medium text-gray-900">Contractor</div>
+                                    <div class="mt-1 text-sm text-gray-600">I'm interested in learning how your AI can help me book more appointments.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="solution" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Home Service Businesses Are Bleeding Revenue
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    70% of leads are lost to slow or no follow up
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-4">
+                        <i class="fas fa-dollar-sign text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Cost & Time Problem</h3>
+                    <p class="text-gray-500">
+                        Traditional solutions are expensive and inefficient:
+                    </p>
+                    <ul class="mt-3 space-y-2 text-gray-500">
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs text-indigo-500 mt-1 mr-2"></i>
+                            <span>Retargeting ads ($50K/year)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs text-indigo-500 mt-1 mr-2"></i>
+                            <span>SDR/BDR teams ($75K/year)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs text-indigo-500 mt-1 mr-2"></i>
+                            <span>Call centers & outsourcing ($35k/year)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs text-indigo-500 mt-1 mr-2"></i>
+                            <span>Virtual assistants ($18K/year)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-100 text-yellow-600 mb-4">
+                        <i class="fas fa-clock text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Slow Response Times</h3>
+                    <p class="text-gray-500">
+                        Traditional methods take too long to convert leads:
+                    </p>
+                    <div class="mt-4 flex items-center justify-between">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-gray-900">5-7 days</div>
+                            <div class="text-sm text-gray-500">Time to sales appointment</div>
+                        </div>
+                        <div class="text-gray-400 mx-4">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-indigo-600">Minutes</div>
+                            <div class="text-sm text-gray-500">With OutreachGenius AI</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Missed Opportunities</h3>
+                    <p class="text-gray-500">
+                        Without 24/7 availability, you're losing business:
+                    </p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                            <div class="bg-indigo-600 h-4 rounded-full" style="width: 70%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>70% of leads</span>
+                            <span>Never get followed up</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold sm:text-4xl">
+                    Our AI-Powered Solution
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl mx-auto">
+                    24/7 AI Voice Agent that never takes a break
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-filter backdrop-blur-sm border border-white border-opacity-20">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-white text-indigo-600 mb-4">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Never Miss a Lead</h3>
+                    <p class="text-white text-opacity-80">
+                        Our AI answers calls 24/7, qualifying leads and scheduling appointments even when your team is unavailable.
+                    </p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-filter backdrop-blur-sm border border-white border-opacity-20">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-white text-indigo-600 mb-4">
+                        <i class="fas fa-calendar-check text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Book Appointments</h3>
+                    <p class="text-white text-opacity-80">
+                        The AI qualifies leads and books them directly into your calendar, saving your team hours of work.
+                    </p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-filter backdrop-blur-sm border border-white border-opacity-20">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-md bg-white text-indigo-600 mb-4">
+                        <i class="fas fa-comment-dots text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">SMS Follow-Up</h3>
+                    <p class="text-white text-opacity-80">
+                        After calls, the AI sends SMS confirmations and reminders to reduce no-shows and improve conversion.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white hover:bg-gray-100">
+                    <i class="fas fa-phone-alt mr-2"></i> Experience our AI - Call (906) 483-9857
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Our AI-Powered Products
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Three core agents tailored to your business needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Inbound Call Agent -->
+                <div class="feature-card bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-100 text-indigo-600 mb-4">
+                            <i class="fas fa-phone-volume text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">Inbound Call Agent</h3>
+                        <p class="text-gray-500 mb-4">
+                            Answers all incoming calls for your business, acting as a 24/7 receptionist.
+                        </p>
+                        <div class="mb-4">
+                            <span class="text-2xl font-bold text-gray-900">$197</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-500 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-xs text-indigo-500 mt-1 mr-2"></i>
+                                <span>First 500 minutes included</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-xs text-indigo-500 mt-1 mr-2"></i>
+                                <span>$0.35 per additional minute</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-xs text-indigo-500 mt-1 mr-2"></i>
+                                <span>40% margins today → 80% by Q2 2025</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- CRM Revival Agent -->
+                <div class="feature-card bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition duration-300 transform">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-100 text-purple-600 mb-4">
+                            <i class="fas fa-recycle text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">CRM Revival Agent</h3>
+                        <p class="text-gray-500 mb-4">
+                            Contacts inactive CRM leads via phone, qualifies interest, and books appointments.
+                        </p>
+                        <div class="mb-4">
+                            <span class="text-2xl font-bold text-gray-900">$297</span>
+                            <span class="text-gray-500">/month</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-500 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-xs text-purple-500 mt-1 mr-2"></i>
+                                <span>First 1,000 minutes included</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-xs text-purple-500 mt-1 mr-2"></i>
+                                <span>$0.35 per additional minute</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-xs text-purple-500 mt-1 mr-2"></i>
+                                <span>50% margins today → 80% by Q2 2025</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Predictive Outreach Agent -->
+                <div class="feature-card bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
+                            <i class="fas fa-bullseye text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">Predictive Outreach Agent</h3>
+                        <p class="text-gray-500 mb-4">
+                            Uses data signals to predict which households need your services.
+                        </p>
+                        <div class="mb-4">
+                            <span class="text-2xl font-bold text-gray-900">$1,500</span>
+                            <span class="text-gray-500">/month (custom pricing)</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-500 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-xs text-green-500 mt-1 mr-2"></i>
+                                <span>Property listings & permit filings</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-xs text-green-500 mt-1 mr-2"></i>
+                                <span>Home-related activity signals</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-xs text-green-500 mt-1 mr-2"></i>
+                                <span>60%+ margins with automated sourcing</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traction Section -->
+    <section id="traction" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Our Traction
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Proven results and rapid growth
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="stats-card bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-indigo-100 rounded-md p-3">
+                            <i class="fas fa-chart-line text-indigo-600 text-xl"></i>
+                        </div>
+                        <div class="ml-5">
+                            <dt class="text-sm font-medium text-gray-500 truncate">Monthly Recurring Revenue</dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900">$29.7K</div>
+                                <div class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
+                                    <span>January 2025</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-card bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-purple-100 rounded-md p-3">
+                            <i class="fas fa-building text-purple-600 text-xl"></i>
+                        </div>
+                        <div class="ml-5">
+                            <dt class="text-sm font-medium text-gray-500 truncate">Pilots Secured</dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900">800+</div>
+                                <div class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
+                                    <span>Locations</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-card bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                            <i class="fas fa-percentage text-green-600 text-xl"></i>
+                        </div>
+                        <div class="ml-5">
+                            <dt class="text-sm font-medium text-gray-500 truncate">Cost Reduction</dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900">80%</div>
+                                <div class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
+                                    <span>AI call costs ($0.10 → $0.02)</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+                <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">Revenue Growth</h3>
+                </div>
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex justify-between mb-4">
+                        <div class="text-center">
+                            <div class="text-sm font-medium text-gray-500">January 2025</div>
+                            <div class="text-xl font-bold text-indigo-600">$29.7K</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-sm font-medium text-gray-500">February 2025</div>
+                            <div class="text-xl font-bold text-indigo-600">$24.3K</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-sm font-medium text-gray-500">March 2025</div>
+                            <div class="text-xl font-bold text-indigo-600">$24.9K</div>
+                        </div>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div class="bg-indigo-600 h-4 rounded-full" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 grid md:grid-cols-2 gap-8">
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">Go-To-Market Strategy</h3>
+                    </div>
+                    <div class="px-4 py-5 sm:p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base font-medium text-gray-900">Outbound AI Cold Calling</h4>
+                                    <p class="mt-1 text-sm text-gray-500">Our AI agent generated 167 sales meetings in 2025 (most scalable channel)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base font-medium text-gray-900">Trade Shows & Franchise Conferences</h4>
+                                    <p class="mt-1 text-sm text-gray-500">Building relationships with franchise associations (600+ franchises)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base font-medium text-gray-900">Strategic Partnerships</h4>
+                                    <p class="mt-1 text-sm text-gray-500">3 key partnerships secured with sales leaders and trainers</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white shadow rounded-lg overflow-hidden">
+                    <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">Business Model</h3>
+                    </div>
+                    <div class="px-4 py-5 sm:p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base font-medium text-gray-900">Set Up Fee</h4>
+                                    <p class="mt-1 text-sm text-gray-500">$997 one-time implementation fee</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base font-medium text-gray-900">SaaS Subscription</h4>
+                                    <p class="mt-1 text-sm text-gray-500">$297 - $997/month recurring revenue</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base font-medium text-gray-900">Pay-Per-Appointment</h4>
+                                    <p class="mt-1 text-sm text-gray-500">$50 per qualified appointment (optional)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Leadership Team
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    35+ years of combined experience in home services
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- David Owasi -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-16 w-16 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                                <i class="fas fa-user-tie text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">David Owasi</h3>
+                                <p class="text-sm text-gray-500">Founder & CEO</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>Strong sales-first team leader with expertise in the intersection of AI and marketing technology.</p>
+                        </div>
+                        <div class="mt-4 flex space-x-4">
+                            <a href="https://www.linkedin.com/in/davidowasi/" class="text-gray-400 hover:text-indigo-600">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="mailto:david@outreachgenius.ai" class="text-gray-400 hover:text-indigo-600">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pasha Khoshkebari -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-16 w-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                <i class="fas fa-code text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Pasha Khoshkebari</h3>
+                                <p class="text-sm text-gray-500">Founder & CTO</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>Technical savant capable of building and driving his tight-knit team of engineers at blazing-fast speeds.</p>
+                        </div>
+                        <div class="mt-4 flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-purple-600">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="mailto:pasha@outreachgenius.ai" class="text-gray-400 hover:text-purple-600">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- David Kurkjian -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-16 w-16 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                <i class="fas fa-chart-line text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">David Kurkjian</h3>
+                                <p class="text-sm text-gray-500">CRO</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>10x sales leader with 35+ years experience and deep industry knowledge. Coached 200+ teams.</p>
+                        </div>
+                        <div class="mt-4 flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-green-600">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="mailto:davidk@outreachgenius.ai" class="text-gray-400 hover:text-green-600">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Christopher Friesen -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-16 w-16 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                                <i class="fas fa-cogs text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">Christopher Friesen</h3>
+                                <p class="text-sm text-gray-500">COO</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>Startup generalist with PhD scientist background. Expert in data science and operations design.</p>
+                        </div>
+                        <div class="mt-4 flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-yellow-600">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="mailto:chris@outreachgenius.ai" class="text-gray-400 hover:text-yellow-600">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section id="investment" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Investment Opportunity
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Join us in revolutionizing home service lead generation
+                </p>
+            </div>
+            
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+                <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">Funding Details</h3>
+                </div>
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-indigo-600">$500K</div>
+                            <div class="mt-2 text-sm font-medium text-gray-500">Fundraising Target</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-purple-600">$290K</div>
+                            <div class="mt-2 text-sm font-medium text-gray-500">Already Committed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-green-600">$5M</div>
+                            <div class="mt-2 text-sm font-medium text-gray-500">Valuation Cap</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium text-gray-900 mb-4">Use of Funds</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mt-1">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray-600">Solidify distribution moat through franchisor partnerships</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mt-1">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray-600">Accelerate path to positive unit economics</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mt-1">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray-600">Expand engineering team to enhance AI capabilities</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mt-1">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-gray-600">Increase marketing and sales efforts</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium text-gray-900 mb-4">What's Next?</h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h5 class="text-sm font-medium text-gray-900">Onboard 100 contractors</h5>
+                                        <p class="mt-1 text-sm text-gray-500">By Q3 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <div class="flex">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h5 class="text-sm font-medium text-gray-900">Sign 3+ franchise brands</h5>
+                                        <p class="mt-1 text-sm text-gray-500">By Q3 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white shadow rounded-lg overflow-hidden">
+                <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">Our Moat</h3>
+                </div>
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-base font-medium text-gray-900">Tech isn't our Moat. Distribution is.</h4>
+                            <p class="mt-1 text-sm text-gray-600">Franchisor-first distribution with 30+ years of sales IP to train AI agents and real-world signal engine (Permits, MLS listings).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Get in Touch
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-500">
+                        Ready to learn how OutreachGenius can transform your home service business? Contact us today.
+                    </p>
+                    
+                    <div class="mt-8">
+                        <div class="flex items-start mb-6">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-base font-medium text-gray-900">Email</h4>
+                                <p class="mt-1 text-sm text-gray-500">
+                                    <a href="mailto:david@outreachgenius.ai" class="text-indigo-600 hover:text-indigo-500">david@outreachgenius.ai</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-base font-medium text-gray-900">Phone</h4>
+                                <p class="mt-1 text-sm text-gray-500">
+                                    <a href="tel:+12048944361" class="text-purple-600 hover:text-purple-500">+1 (204) 894-4361</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-base font-medium text-gray-900">Headquarters</h4>
+                                <p class="mt-1 text-sm text-gray-500">Winnipeg, Manitoba</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg shadow-md p-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Send us a message</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-medium mb-4">OutreachGenius</h3>
+                    <p class="text-gray-300 text-sm">
+                        AI-powered phone calls to revive inactive CRM leads and manage inbound calls for home improvement contractors.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Products</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white">Inbound Call Agent</a></li>
+                        <li><a href="#" class="hover:text-white">CRM Revival Agent</a></li>
+                        <li><a href="#" class="hover:text-white">Predictive Outreach</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Company</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#team" class="hover:text-white">Team</a></li>
+                        <li><a href="#traction" class="hover:text-white">Traction</a></li>
+                        <li><a href="#investment" class="hover:text-white">Investment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-facebook text-lg"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <a href="tel:19064839857" class="inline-flex items-center text-sm text-gray-300 hover:text-white">
+                            <i class="fas fa-phone-alt mr-2"></i> (906) 483-9857
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700">
+                <p class="text-sm text-gray-400 text-center">
+                    &copy; 2025 OutreachGenius. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
